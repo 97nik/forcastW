@@ -99,6 +99,7 @@ extension MainScreenPresenter {
 //		//print("loadEmployees: \(model.map{Model(id: $0, name: $0.password)})")
 //		print("models")
 //		print(models.count)
+		self.notesStorage.notesCount()
 		print("modelss - размер массива после выгрузки")
 		print(modelss.count)
 		print(modelss)
