@@ -1,0 +1,6 @@
+framework module Pods_forcastW {
+  umbrella header "Pods-forcastW-umbrella.h"
+
+  export *
+  module * { export * }
+}
