@@ -70,7 +70,7 @@ extension MainScreenPresenter {
 	func saveCity(city: String) {
 		
 		let citys = CityModel(holder: self.user.uid, name: "lol")
-			self.notesStorage.addNewEmployee(withEmployee: citys, forCompany: self.user)
+		self.notesStorage.addNewEmployee(withEmployee: citys, forCompany: self.user)
 		//	print(newEmployee.workExperience)
 		//	self.loadEmployees()
 		//	self.viewController?.refreshTable()
@@ -93,17 +93,19 @@ extension MainScreenPresenter {
 		let models = self.notesStorage.getNotes(for: self.user)
 		let modelss = models.map { Model(id: $0.uid, name: $0.name) }
 
-		model = self.notesStorage.getNotes(for: self.user)
-		//let modelsss = model.map { Model(id: $0., holder: $0.holder, name: $0.name) }
-		print("model")
-		//print("loadEmployees: \(model.map{Model(id: $0, name: $0.password)})")
-		print("models")
-		print(models.count)
-		print("modelss")
+		//model = self.notesStorage.getNotes(for: self.user)
+//		//let modelsss = model.map { Model(id: $0., holder: $0.holder, name: $0.name) }
+//		print("model")
+//		//print("loadEmployees: \(model.map{Model(id: $0, name: $0.password)})")
+//		print("models")
+//		print(models.count)
+		print("modelss - размер массива после выгрузки")
+		print(modelss.count)
 		print(modelss)
 		
 		let user = self.notesStorage.loadCompanies()
 		print("user: \(user.map{Model(id: $0.uid, name: $0.password)})")
+		
 		
 	}
 	

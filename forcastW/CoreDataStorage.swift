@@ -43,6 +43,7 @@ protocol IUserStorage {
 	func getUser(login: String, password: String) -> UserModel?
 	func saveUser(user: UserModel, completion: @escaping () -> Void)
 	func usersCount() -> Int
+	func notesCount() -> Int 
 }
 extension CoreDataStorage: IUserStorage {
 	func getUser(login: String, password: String) -> UserModel? {
@@ -176,8 +177,9 @@ extension CoreDataStorage: ICityStorage {
 
 	func notesCount() -> Int {
 		let fetchRequest = NSFetchRequest<City>(entityName: Constants.entityName)
-		print("lol")
-		return (try? self.container.viewContext.count(for: fetchRequest)) ?? 0
+		let count = (try? self.container.viewContext.count(for: fetchRequest)) ?? 0
+		print("размер массива City \(count)")
+		return count
 	}
 	
 	func addNewEmployee(withEmployee city: CityModel, forCompany user: UserModel) {
